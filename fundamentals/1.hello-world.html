@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World By React</title>
+    </head>
+    <head>
+        <body>
+            <div id="root"></div>
+
+            <script src="js/react.development.js"></script>
+            <script src="js/react-dom.development.js"></script>
+            <script src="js/babel.js"></script>
+
+            <script type="text/babel">
+                const rootHandle = document.getElementById('root')
+                //JSX - JavaScript XML
+                const msg = 'Hello World'
+                const ele = <h1> {msg} </h1> //react element
+
+                ReactDOM.render(ele, rootHandle)
+                
+            </script>
+        </body>
+    </head>
+</html>

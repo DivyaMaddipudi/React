@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <head>
+        <body>
+            <div id="root"></div>
+
+            <script src="js/react.development.js"></script>
+            <script src="js/react-dom.development.js"></script>
+            <script src="js/babel.js"></script>
+
+            <script type="text/babel">
+                const rootHandle = document.getElementById('root')
+                const user = {
+                    firstName: 'Divya',
+                    email: 'divya.maddipudi1@gmail.com',
+                    imagePic: 'https://miro.medium.com/max/3150/1*rPiP58yIuzzslWzYzOGlBw.jpeg'
+                }
+
+                const ele = <img src={user.imagePic} alt={user.firstName} width="300px"/>
+
+                ReactDOM.render(ele, rootHandle)
+
+            </script>
+        </body>
+    </head>
+</html>
