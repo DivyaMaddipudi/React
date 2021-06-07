@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+
+        const color = {
+            red: ['energy', 'strength', 'power', 'courage']
+        }
+
+        // console.log(color.red)
+
+        const generateColor = (color) => {
+            const result = []
+            let k = ""
+            let colSig = ""
+            for (const key in color) {
+                k = key
+                for (let i = 0; i <= key.length; i++) {
+                    // if (i == key.length) {
+                    //     colSig = colSig + color[key][i]
+                    // } else {
+                    //     colSig = colSig + color[key][i] + ","
+                    // }
+                    result.push(color[key][i])
+
+                }
+            }
+            return result
+        }
+
+        const ele = (
+            // generateColor(color)
+            <h2>
+                {Object.keys(color).map((ele) => {
+                    return <h2> {ele} - {generateColor(color).join()}</h2>
+                })}
+            </h2>
+        )
+        ReactDOM.render(ele, rootHandle)
+
+    </script>
+</body>
+</head>
+
+</html>

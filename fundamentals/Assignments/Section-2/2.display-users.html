@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+        
+        const users = [
+            { "id": 1, "email": "george@gmail.com", "first_name": "George", "avatar": "https://randomuser.me/api/portraits/men/32.jpg" },
+            { "id": 2, "email": "weaver@gmail.com", "first_name": "Weaver", "avatar": "https://randomuser.me/api/portraits/men/46.jpg" },
+            { "id": 3, "email": "wong@gmail.com", "first_name": "Wong", "avatar": "https://randomuser.me/api/portraits/men/36.jpg" },
+            { "id": 4, "email": "eve@gmail.com", "first_name": "Eve", "avatar": "https://randomuser.me/api/portraits/women/79.jpg" }
+        ]
+
+        const ele = (
+            <div>
+                <h2>Listing users - {users.length}</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Avatar</th>
+                            <th>First Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       {users.map((ele) => {
+                           return (
+                            <tr key={ele.id}>
+                            <td><img src={ele.avatar} alt="user_image"/></td>
+                            <td>{ele.first_name}</td>
+                            <td>{ele.email}</td>
+                            </tr>
+                           )
+                       })}
+                    </tbody>
+                </table>
+
+            </div>
+        )
+
+        ReactDOM.render(ele, rootHandle)
+
+    </script>
+</body>
+</head>
+
+</html>
