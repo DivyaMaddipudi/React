@@ -37,7 +37,6 @@
                     //     colSig = colSig + color[key][i] + ","
                     // }
                     result.push(color[key][i])
-
                 }
             }
             return result
@@ -47,7 +46,7 @@
             // generateColor(color)
             <h2>
                 {Object.keys(color).map((ele) => {
-                    return <h2> {ele} - {generateColor(color).join()}</h2>
+                    return <h2> {ele} - {color[ele].join()}</h2>
                 })}
             </h2>
         )

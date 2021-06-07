@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+
+        const colors = [
+            { color: 'red', symbols: ['energy', 'strength', 'power', 'courage'] },
+            { color: 'blue', symbols: ['loyalty', 'trust', 'stability', 'confidence'] },
+            { color: 'orange', symbols: ['excitment', 'fun', 'haste', 'action'] },
+            { color: 'yellow', symbols: ['cheerfulness', 'happiness', 'joy', 'optimism'] }
+        ]
+
+        const generateColor = (color) => {
+            return color.toUpperCase()
+        }
+
+        const ele = (
+            <div>
+                <h2>Colors & it's symbol</h2>
+                {colors.map((ele) => {
+                    console.log(ele.color)
+                    return (
+                    <div key={ele.color}> <h2>{generateColor(ele.color)}</h2>
+                    <p>{ele.symbols.join()}</p> </div>)
+                })}
+            </div>
+        )
+        ReactDOM.render(ele, rootHandle)
+
+    </script>
+</body>
+</head>
+
+</html>
