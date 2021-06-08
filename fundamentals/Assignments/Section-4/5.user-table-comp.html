@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+
+        const users = [
+            { id: 1, name: 'user1', email: 'u1@gmail.com' },
+            { id: 2, name: 'user2', email: 'u2@gmail.com' },
+            { id: 3, name: 'user3', email: 'u3@gmail.com' }
+        ]
+
+        function UserTable(props) {
+            return (
+                <tr>
+                    <td>{props.id}</td>
+                    <td>{props.name}</td>
+                    <td>{props.email}</td>
+                </tr>
+            )
+        }
+
+
+        const ele = (
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map((user) => {
+                        return <UserTable key={user.id} id={user.id} name={user.name} email={user.email} />
+                    })}
+                </tbody>
+            </table>
+        )
+        ReactDOM.render(ele, rootHandle)
+    </script>
+</body>
+</head>
+
+</html>

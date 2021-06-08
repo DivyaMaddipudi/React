@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+
+        function Time(props) {
+            return <h1>{props.current_time}</h1>
+        }
+
+        const getTime = () => {
+            var date = new Date()
+            var hours = date.getHours()
+            var minutes = date.getMinutes()
+            var dateValue
+            if(hours > 12) {
+                hours = hours - 12;
+                dateValue =  hours + ":" + minutes + " PM"
+            } else {
+                dateValue =  hours + ":" + minutes + " AM"
+            }
+            return dateValue;
+        }
+
+        const ele = <Time current_time={getTime()}/>
+        
+
+        ReactDOM.render(ele, rootHandle)
+
+    </script>
+</body>
+</head>
+
+</html>
