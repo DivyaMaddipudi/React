@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.js"></script>
+
+    <script type="text/babel">
+        const rootHandle = document.getElementById('root')
+
+        const fruits = ['apple', 'water melon', 'strawberry', 'kiwi']
+
+
+       
+        function RandomElement(props) {
+
+            function getRandomFruit() {
+                alert(props.fruits[Math.floor(Math.random()*4)])
+            }
+            return(
+                <div>
+                    <button onClick={getRandomFruit}>Pick random</button>   
+                    
+                    <ul>
+                        {fruits.map((fruit, i) => {
+                            return <li key={i}>{fruit}</li>
+                        })}    
+                    </ul>
+                </div>
+            )
+
+        }
+        const ele = <RandomElement fruits={fruits} />
+
+        ReactDOM.render(ele, rootHandle)
+    </script>
+</body>
+</head>
+
+</html>
