@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.js"></script>
+
+    <script type="text/babel">
+
+        const rootHandle = document.getElementById('root')
+
+        function Parent() {
+            const names = ['Ross', 'Joey', 'Monica', 'Rachel']
+            // callback
+            function getHugs(name) {
+                alert(`${name} Hugged back`)
+            }
+
+            return(
+                <div>
+                    <h1>Parent Component</h1>
+                    {names.map((ele, i) => {
+                        return <Child key={i} name={ele} callback={getHugs}/>
+                    })}
+                </div>
+            )
+        }
+
+        function Child(props) {
+            // console.log(this.props)
+            return(
+                <div>
+                    <h1>Child Component - {props.name}</h1>
+                    <button onClick = {() => {
+                        props.callback(props.name)
+                    }}>Hug</button>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<Parent />, rootHandle)
+    </script>
+</body>
+</html>
