@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "todo-app-react-61d19"
+    "default": "todo-app-react-61d19",
+    "messenger-clone": "fb-messenger-clone-md"
   }
 }
