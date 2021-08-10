@@ -1,0 +1,18 @@
+.type{
+    margin-top: 60px;
+    margin-left: 350px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.type__link {
+    float: left;
+    font-size: large;
+    font-style: normal;
+    
+
+}
+.type__time {
+    float: left;
+    margin-left: 40px;
+    margin-top: -20px;
+}

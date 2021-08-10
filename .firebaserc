@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "todo-app-react-61d19",
-    "messenger-clone": "fb-messenger-clone-md"
+    "messenger-clone": "fb-messenger-clone-md",
+    "tinder-clone": "tinder-clone-md"
   }
 }
